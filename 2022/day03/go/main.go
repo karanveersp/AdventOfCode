@@ -101,16 +101,14 @@ func FindIntersections(s ...string) string {
 	}
 
 	for _, line := range s[1:] {
-
 		newIntersection := map[rune]struct{}{}
-
-		// intersect next against previous
 		for _, c := range line {
+			// compare current string against previous intersection and add to new intersection.
 			if _, ok := intersection[c]; ok {
 				newIntersection[c] = struct{}{}
 			}
 		}
-
+		// update intersection.
 		intersection = newIntersection
 	}
 	res := ""
