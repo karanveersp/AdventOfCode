@@ -36,7 +36,7 @@ func TestPart1_FindIntersectionPriority(t *testing.T) {
 }
 
 func TestPart2_FindBadgesSample(t *testing.T) {
-	sum, err := FindBadgesSum("test_input.txt")
+	sum, err := FindBadgesPrioritySum("test_input.txt")
 	if err != nil {
 		t.Error(err)
 	}
@@ -46,7 +46,7 @@ func TestPart2_FindBadgesSample(t *testing.T) {
 }
 
 func TestPart2_FindBadges(t *testing.T) {
-	sum, err := FindBadgesSum("input.txt")
+	sum, err := FindBadgesPrioritySum("input.txt")
 	if err != nil {
 		t.Error(err)
 	}

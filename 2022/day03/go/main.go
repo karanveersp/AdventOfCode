@@ -68,7 +68,7 @@ func FindIntersectionSum(filePath string) (int, error) {
 	return sum, nil
 }
 
-func FindBadgesSum(filePath string) (int, error) {
+func FindBadgesPrioritySum(filePath string) (int, error) {
 	sum := 0
 	var group []string
 	for line, err := range file.IterLines(filePath) {
