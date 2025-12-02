@@ -1,4 +1,5 @@
 ﻿module Day1
+
 open System.IO
 
 // pw is count of how many times we end up at 0 during the sequence.
@@ -56,8 +57,7 @@ let getPasswordPart2 n rotations =
     aux rotations (n / 2) 0
 
 
-
-let parse (text: string) =
+let parseDay1 (text: string) =
     let lineToRotation (line: string) : Rotation =
         if line.StartsWith("L") then
             Left(int (line.Substring(1)))
