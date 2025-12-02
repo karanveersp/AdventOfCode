@@ -1,5 +1,4 @@
-﻿module Solution
-
+﻿module Day1
 open System.IO
 
 // pw is count of how many times we end up at 0 during the sequence.
@@ -7,7 +6,7 @@ type Rotation =
     | Left of int
     | Right of int
 
-let getPassword (rotations: Rotation list) n : int =
+let getPassword n rotations : int =
     // helper function to rotate in a direction one by one
     let rec rotate currLoc r =
         match r with
@@ -32,7 +31,7 @@ let getPassword (rotations: Rotation list) n : int =
     aux rotations (n / 2) 0
 
 
-let getPasswordPart2 rotations n =
+let getPasswordPart2 n rotations =
     let rec rotate currLoc zeroCount r =
         match r with
         | Left 0 -> (currLoc, zeroCount)
@@ -58,9 +57,7 @@ let getPasswordPart2 rotations n =
 
 
 
-let parseInput (fileName: string) =
-    let text = File.ReadAllText(fileName)
-
+let parse (text: string) =
     let lineToRotation (line: string) : Rotation =
         if line.StartsWith("L") then
             Left(int (line.Substring(1)))
